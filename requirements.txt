@@ -1,0 +1,11 @@
+torch==2.13.0
+numpy==2.5.1
+scipy==1.18.0
+pandas==3.0.5
+matplotlib==3.11.1
+datasets==5.0.1
+gensim==4.4.0
+nltk==3.10.3
+scikit-learn==1.9.0
+nbformat==5.10.4
+nbclient==0.11.0

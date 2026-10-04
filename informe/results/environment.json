@@ -1,0 +1,24 @@
+{
+  "seed": 23556,
+  "python": "3.12.13",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "cpu": "AMD64 Family 25 Model 117 Stepping 2, AuthenticAMD",
+  "cpu_threads": 12,
+  "packages": {
+    "torch": "2.13.0+cu130",
+    "numpy": "2.5.1",
+    "scipy": "1.18.0",
+    "pandas": "3.0.5",
+    "matplotlib": "3.11.1",
+    "datasets": "5.0.1",
+    "gensim": "4.4.0",
+    "nltk": "3.10.3",
+    "scikit-learn": "1.9.0",
+    "nbformat": "5.10.4",
+    "nbclient": "0.11.0"
+  },
+  "cuda": "13.0",
+  "cuda_available": true,
+  "gpu": "NVIDIA GeForce RTX 4050 Laptop GPU",
+  "gpu_memory_bytes": 6438780928
+}
