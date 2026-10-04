@@ -1,0 +1,334 @@
+{
+  "splits": {
+    "test": {
+      "lines": 4358,
+      "nonempty_lines": 2891,
+      "articles": 62,
+      "tokens": 204879,
+      "fingerprint": "c30409b5a24d230f"
+    },
+    "train": {
+      "lines": 1801350,
+      "nonempty_lines": 1165029,
+      "articles": 29444,
+      "tokens": 85929215,
+      "fingerprint": "7dabb830ac9ebb0d"
+    },
+    "validation": {
+      "lines": 3760,
+      "nonempty_lines": 2461,
+      "articles": 60,
+      "tokens": 182322,
+      "fingerprint": "ea37ea707fafbf9f"
+    }
+  },
+  "subsets": {
+    "20000000": {
+      "normalized_tokens": 20000008,
+      "sentences": 930276,
+      "retained_tokens": 19741082,
+      "encoded_end": 19741082
+    },
+    "30000000": {
+      "normalized_tokens": 30000017,
+      "sentences": 1394201,
+      "counts": null,
+      "retained_tokens": 29507792,
+      "encoded_end": 29507792
+    },
+    "40000000": {
+      "normalized_tokens": 40000011,
+      "sentences": 1859954,
+      "counts": null,
+      "retained_tokens": 39275085,
+      "encoded_end": 39275085
+    }
+  },
+  "vocabulary_size": 80087,
+  "min_count": 5,
+  "sample": 0.0001,
+  "coverage": {
+    "10": 0.2443777241535373,
+    "1000": 0.6462475887857232,
+    "30000": 0.9551105057808337
+  },
+  "threshold_comparison": [
+    {
+      "min_count": 5,
+      "vocabulary": 80087,
+      "unknown_percent": 1.2946294821482018
+    },
+    {
+      "min_count": 10,
+      "vocabulary": 54175,
+      "unknown_percent": 2.1449841420063454
+    },
+    {
+      "min_count": 20,
+      "vocabulary": 36728,
+      "unknown_percent": 3.3365736653705347
+    }
+  ],
+  "subsampling": {
+    "the": {
+      "theoretical_discard_percent": 96.24093066336532,
+      "observed_discard_percent": 96.26422946864031
+    },
+    "of": {
+      "theoretical_discard_percent": 94.13742018551362,
+      "observed_discard_percent": 94.12903124460014
+    },
+    "and": {
+      "theoretical_discard_percent": 93.81323888367588,
+      "observed_discard_percent": 93.79606649842853
+    }
+  },
+  "pairs_before_subsampling": 337969464,
+  "pairs_after_subsampling": 180580964,
+  "retained_after_subsampling": 23472408,
+  "zipf_slope_top_30000": -1.2739024377754047,
+  "tokenizers": [
+    {
+      "text": "I can't believe it's already January.",
+      "custom": [
+        "i",
+        "can't",
+        "believe",
+        "it's",
+        "already",
+        "january"
+      ],
+      "nltk": [
+        "i",
+        "ca",
+        "n't",
+        "believe",
+        "it",
+        "'s",
+        "already",
+        "january",
+        "."
+      ]
+    },
+    {
+      "text": "They're buying state-of-the-art computers.",
+      "custom": [
+        "they're",
+        "buying",
+        "state",
+        "of",
+        "the",
+        "art",
+        "computers"
+      ],
+      "nltk": [
+        "they",
+        "'re",
+        "buying",
+        "state-of-the-art",
+        "computers",
+        "."
+      ]
+    },
+    {
+      "text": "Dr. Smith lives in the U.S.A.",
+      "custom": [
+        "dr",
+        "smith",
+        "lives",
+        "in",
+        "the",
+        "u",
+        "s",
+        "a"
+      ],
+      "nltk": [
+        "dr.",
+        "smith",
+        "lives",
+        "in",
+        "the",
+        "u.s.a",
+        "."
+      ]
+    },
+    {
+      "text": "The price is $12.50, not $1,250.",
+      "custom": [
+        "the",
+        "price",
+        "is",
+        "12.50",
+        "not",
+        "1,250"
+      ],
+      "nltk": [
+        "the",
+        "price",
+        "is",
+        "$",
+        "12.50",
+        ",",
+        "not",
+        "$",
+        "1,250",
+        "."
+      ]
+    },
+    {
+      "text": "King's horses aren't running.",
+      "custom": [
+        "king's",
+        "horses",
+        "aren't",
+        "running"
+      ],
+      "nltk": [
+        "king",
+        "'s",
+        "horses",
+        "are",
+        "n't",
+        "running",
+        "."
+      ]
+    },
+    {
+      "text": "COVID-19 changed 2020–2021.",
+      "custom": [
+        "covid",
+        "19",
+        "changed",
+        "2020",
+        "2021"
+      ],
+      "nltk": [
+        "covid-19",
+        "changed",
+        "2020–2021",
+        "."
+      ]
+    },
+    {
+      "text": "Email alice@example.com or visit https://example.com.",
+      "custom": [
+        "email",
+        "alice",
+        "example",
+        "com",
+        "or",
+        "visit",
+        "https",
+        "example",
+        "com"
+      ],
+      "nltk": [
+        "email",
+        "alice",
+        "@",
+        "example.com",
+        "or",
+        "visit",
+        "https",
+        ":",
+        "//example.com",
+        "."
+      ]
+    },
+    {
+      "text": "“Hello!” she said... then left.",
+      "custom": [
+        "hello",
+        "she",
+        "said",
+        "then",
+        "left"
+      ],
+      "nltk": [
+        "“hello",
+        "!",
+        "”",
+        "she",
+        "said",
+        "...",
+        "then",
+        "left",
+        "."
+      ]
+    },
+    {
+      "text": "He'll re-enter the twenty-first competition.",
+      "custom": [
+        "he'll",
+        "re",
+        "enter",
+        "the",
+        "twenty",
+        "first",
+        "competition"
+      ],
+      "nltk": [
+        "he",
+        "'ll",
+        "re-enter",
+        "the",
+        "twenty-first",
+        "competition",
+        "."
+      ]
+    },
+    {
+      "text": "New York's capital isn't New York City.",
+      "custom": [
+        "new",
+        "york's",
+        "capital",
+        "isn't",
+        "new",
+        "york",
+        "city"
+      ],
+      "nltk": [
+        "new",
+        "york",
+        "'s",
+        "capital",
+        "is",
+        "n't",
+        "new",
+        "york",
+        "city",
+        "."
+      ]
+    },
+    {
+      "text": "WikiText writes well @-@ known and 1 @,@ 000.",
+      "custom": [
+        "wikitext",
+        "writes",
+        "well",
+        "known",
+        "and",
+        "1,000"
+      ],
+      "nltk": [
+        "wikitext",
+        "writes",
+        "well",
+        "@",
+        "-",
+        "@",
+        "known",
+        "and",
+        "1",
+        "@",
+        ",",
+        "@",
+        "000",
+        "."
+      ]
+    }
+  ],
+  "article_definition": "Top-level WikiText title line, excluding subsection headers.",
+  "token_definition": "Normalized body words, headings and punctuation-only tokens excluded."
+}
