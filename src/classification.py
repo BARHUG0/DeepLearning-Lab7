@@ -205,7 +205,9 @@ def train_baseline(news, fraction):
 
     final_path = RESULTS / f"baseline_f{fraction:g}.json"
     if final_path.exists():
-        return load_json(final_path)
+        cached = load_json(final_path)
+        if cached.get("optimizer_block_size") == 25:
+            return cached
     indices = fraction_indices(news["train"], news["labels"], fraction)
     train_texts = [" ".join(news["texts"][index]) for index in indices]
     validation_texts = [" ".join(news["texts"][index]) for index in news["validation"]]
@@ -219,10 +221,10 @@ def train_baseline(news, fraction):
     validation_matrix = vectorizer.transform(validation_texts)
     candidates = []
     for c in (1., 4.):
-        model = LogisticRegression(C=c, solver="lbfgs", max_iter=5, warm_start=True, random_state=SEED)
+        model = LogisticRegression(C=c, solver="lbfgs", max_iter=25, warm_start=True, random_state=SEED)
         history, best_f1, best_state, stale = [], -1., None, 0
         candidate_started = time.perf_counter()
-        for iteration in range(16):
+        for iteration in range(30):
             with warnings.catch_warnings():
                 warnings.simplefilter("ignore", ConvergenceWarning)
                 model.fit(train_matrix, train_labels)
@@ -259,7 +261,8 @@ def train_baseline(news, fraction):
         "total_parameters": int(model.coef_.size + model.intercept_.size),
         "trainable_parameters": int(model.coef_.size + model.intercept_.size),
         "training_seconds": time.perf_counter() - started, "checkpoint": checkpoint,
-        "curve_unit": "Warm-start L-BFGS blocks, at most five optimizer iterations each.",
+        "curve_unit": "Warm-start L-BFGS blocks, at most 25 optimizer iterations each.",
+        "optimizer_block_size": 25,
         "search": [{"C": row["C"], "validation_f1": row["f1"], "seconds": row["seconds"]} for row in candidates],
     }
     save_json(final_path, result)

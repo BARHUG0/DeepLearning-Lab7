@@ -178,7 +178,7 @@ def select_best():
     from gensim.models import KeyedVectors
 
     vectors = KeyedVectors.load(str(ARTIFACTS / f"sgns_{name}_epoch{epoch}.kv"))
-    vectors.save(str(ARTIFACTS / "best_sgns.kv"))
+    vectors.save(str(ARTIFACTS / "best_sgns.kv"), separately=[])
     result = {
         "name": name, "epoch": epoch,
         "configuration": {**history["configuration"], "epochs": epoch},
