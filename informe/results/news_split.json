@@ -1,0 +1,19 @@
+{
+  "dataset_fingerprint": "2bc1e2be15d7f2ee",
+  "split_hash": "36399bf948a0dffb4e2addbeab6801867597d9aea3c6f935b48db79bdc5ea0bb",
+  "training_documents": 108000,
+  "validation_documents": 12000,
+  "training_class_counts": [
+    27000,
+    27000,
+    27000,
+    27000
+  ],
+  "validation_class_counts": [
+    3000,
+    3000,
+    3000,
+    3000
+  ],
+  "seed": 23556
+}
