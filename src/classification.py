@@ -312,18 +312,24 @@ def plot_classification(result):
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
 
-    fig, axes = plt.subplots(1, 2, figsize=(8, 3))
-    for name in ("tfidf", "random", "sgns", "gensim", "glove"):
-        selected = result["selected"][f"{name}_f1"]
+    selected_models = [result["selected"]["tfidf_f1"]]
+    for name in ("random", "sgns", "gensim", "glove"):
+        for variant in (("trainable",) if name == "random" else ("frozen", "finetuned")):
+            candidates = [
+                row for row in result["trials"]
+                if row["initialization"] == name and row["fraction"] == 1 and row["variant"] == variant
+            ]
+            selected_models.append(max(candidates, key=lambda row: row["validation"]["f1_macro"]))
+    fig, axes = plt.subplots(2, 4, figsize=(12, 5))
+    for axis, selected in zip(axes.flat, selected_models):
         history = selected["epochs"]
         x = np.arange(1, len(history) + 1)
-        axes[0].plot(x, [row["training_loss"] for row in history], label=name)
-        axes[1].plot(x, [row["validation_loss"] for row in history], label=name)
-    axes[0].set_title("Training cross-entropy")
-    axes[1].set_title("Validation cross-entropy")
-    for axis in axes:
-        axis.set_xlabel("Epoch or TF-IDF optimizer block")
-    axes[1].legend(fontsize=7)
+        axis.plot(x, [row["training_loss"] for row in history], label="train")
+        axis.plot(x, [row["validation_loss"] for row in history], label="validation")
+        axis.set_title(f"{selected['initialization']} {selected.get('variant', 'logistic')}", fontsize=9)
+        axis.set_xlabel("Epoch or optimizer block", fontsize=8)
+        axis.set_ylabel("Cross-entropy", fontsize=8)
+    axes.flat[0].legend(fontsize=7)
     fig.tight_layout()
     fig.savefig(FIGURES / "classification_training.png", dpi=170)
     plt.close(fig)

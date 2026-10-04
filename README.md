@@ -19,12 +19,17 @@ uv pip install --python ..\.venv\Scripts\python.exe -r requirements.txt --extra-
 ..\.venv\Scripts\python.exe -m src.run final
 ..\.venv\Scripts\python.exe -m src.deliverables
 quarto render informe/report.md --to pdf
+..\.venv\Scripts\python.exe -m src.deliverables --validate
 ```
 
 Commands must run from the repository root. The pilot is a numerical and
 throughput check, not an assignment experiment. Completed embedding epochs are
 checkpointed. Finished experiments are reused, while incomplete epochs restart
 from the preceding checkpoint.
+
+`.\src\finish.ps1` runs the complete sequence, executes the notebook, renders
+the PDF through Quarto, and verifies all experiments and the five-page limit.
+It never creates commits or pushes. If any stage fails, it stops with its error.
 
 The official AG News test set and SimLex-999 are read only by the final stage.
 Final-test output is cached and never used for configuration selection.
@@ -53,4 +58,6 @@ Final-test output is cached and never used for configuration selection.
 
 The best original SGNS vectors are exported as
 `informe/artifacts/best_sgns.kv`. They are not replaced by classification-tuned
-vectors. The final deliverable must include that file alongside the repository.
+vectors. Final validation creates `informe/artifacts/submission.zip` with the
+executed notebook, PDF, standalone vectors, source code and recorded results.
+The archive supplies the large vectors without adding training caches to Git.
