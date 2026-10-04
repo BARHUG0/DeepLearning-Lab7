@@ -1,0 +1,10 @@
+{
+  "device": "cuda",
+  "initial_loss": 4.158883094787598,
+  "final_loss": 0.0845375508069992,
+  "steps": 200,
+  "batch_size": 2048,
+  "seconds": 0.48390130000188947,
+  "synthetic_pairs_per_second": 846453.6053083566,
+  "assignment_experiment": false
+}
