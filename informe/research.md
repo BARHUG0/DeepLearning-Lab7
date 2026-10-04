@@ -83,6 +83,8 @@ comparison. AG News reuses exactly this tokenizer and normalization.
 
 The vocabulary uses frequency at least five in the first 20-million-token
 subset. It remains fixed for corpus-size and hyperparameter comparisons.
+The smallest training subset extends slightly beyond 20 million normalized
+tokens to retain at least 20 million tokens after vocabulary filtering.
 Unknown corpus words are removed before contexts are constructed in both
 training implementations. Negative draws follow retained-vocabulary counts
 raised to the power of 0.75. Frequent words are independently retained with

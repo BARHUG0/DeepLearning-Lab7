@@ -1,7 +1,7 @@
 import re
 from collections import Counter
 
-from .common import ARTIFACTS, FIGURES, RESULTS, SEED, directories, load_json, save_json
+from .common import ARTIFACTS, DATASET_REVISIONS, FIGURES, RESULTS, SEED, directories, load_json, save_json
 
 import numpy as np
 
@@ -73,8 +73,11 @@ def prepare():
     directories()
     if (RESULTS / "preprocessing.json").exists():
         print("Preprocessing already complete.", flush=True)
-        return load_json(RESULTS / "preprocessing.json")
-    corpus = load_dataset("Salesforce/wikitext", "wikitext-103-raw-v1")
+        return ensure_minimum_training_tokens()
+    corpus = load_dataset(
+        "Salesforce/wikitext", "wikitext-103-raw-v1",
+        revision=DATASET_REVISIONS["Salesforce/wikitext"],
+    )
     full_counts = Counter()
     selected_counts = Counter()
     snapshots = {}
@@ -182,6 +185,7 @@ def prepare():
         "token_definition": "Normalized body words, headings and punctuation-only tokens excluded.",
     }
     save_json(RESULTS / "preprocessing.json", result)
+    result = ensure_minimum_training_tokens()
     plt.figure(figsize=(5, 3))
     plt.loglog(np.arange(1, len(frequencies) + 1), frequencies, linewidth=0.8)
     plt.xlabel("Rank")
@@ -190,6 +194,29 @@ def prepare():
     plt.savefig(FIGURES / "zipf.png", dpi=160)
     plt.close()
     print(f"Vocabulary {len(words):,}; pairs {result['pairs_after_subsampling']:,}", flush=True)
+    return result
+
+
+def ensure_minimum_training_tokens():
+    result = load_json(RESULTS / "preprocessing.json")
+    subset = result["subsets"][str(THRESHOLDS[0])]
+    result.setdefault("vocabulary_selection_normalized_tokens", subset["normalized_tokens"])
+    if subset["retained_tokens"] < THRESHOLDS[0]:
+        ends = np.load(ARTIFACTS / "sentence_ends.npy")
+        sentence_count = int(np.searchsorted(ends, THRESHOLDS[0], side="left") + 1)
+        normalized_tokens = 0
+        with (ARTIFACTS / "sentences.txt").open(encoding="utf-8") as source:
+            for index, line in enumerate(source, start=1):
+                normalized_tokens += len(line.split())
+                if index == sentence_count:
+                    break
+        result["subsets"][str(THRESHOLDS[0])] = {
+            "normalized_tokens": normalized_tokens,
+            "sentences": sentence_count,
+            "retained_tokens": int(ends[sentence_count - 1]),
+            "encoded_end": int(ends[sentence_count - 1]),
+        }
+    save_json(RESULTS / "preprocessing.json", result)
     return result
 
 

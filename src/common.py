@@ -10,6 +10,10 @@ RESULTS = ROOT / "informe" / "results"
 FIGURES = ROOT / "informe" / "figures"
 DOWNLOADS = ROOT / "downloads"
 SEED = 23556
+DATASET_REVISIONS = {
+    "Salesforce/wikitext": "b08601e04326c79dfdd32d625aee71d232d685c3",
+    "fancyzhx/ag_news": "eb185aade064a813bc0b7f42de02595523103ca4",
+}
 
 os.environ["HF_HOME"] = str(DOWNLOADS / "huggingface")
 os.environ["HF_DATASETS_CACHE"] = str(DOWNLOADS / "huggingface" / "datasets")

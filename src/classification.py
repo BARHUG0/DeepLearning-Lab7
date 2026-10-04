@@ -4,7 +4,7 @@ import time
 import warnings
 from collections import Counter
 
-from .common import ARTIFACTS, FIGURES, RESULTS, SEED, load_json, save_json, seed_all
+from .common import ARTIFACTS, DATASET_REVISIONS, FIGURES, RESULTS, SEED, load_json, save_json, seed_all
 from .preprocessing import tokenize
 
 import numpy as np
@@ -35,7 +35,9 @@ def prepare_news():
         return torch.load(ARTIFACTS / "news_train.pt", weights_only=False)
     from datasets import load_dataset
 
-    data = load_dataset("fancyzhx/ag_news", split="train")
+    data = load_dataset(
+        "fancyzhx/ag_news", split="train", revision=DATASET_REVISIONS["fancyzhx/ag_news"],
+    )
     texts = [tokenize(text) for text in data["text"]]
     labels = np.asarray(data["label"], dtype=np.int64)
     train, validation = train_test_split(
@@ -340,7 +342,9 @@ def final_evaluation():
     selection_path = RESULTS / "classification_selection.json"
     selection = load_json(selection_path)
     models = load_models()
-    data = load_dataset("fancyzhx/ag_news", split="test")
+    data = load_dataset(
+        "fancyzhx/ag_news", split="test", revision=DATASET_REVISIONS["fancyzhx/ag_news"],
+    )
     texts = [tokenize(text) for text in data["text"]]
     labels = np.asarray(data["label"], dtype=np.int64)
     device = "cuda" if torch.cuda.is_available() else "cpu"

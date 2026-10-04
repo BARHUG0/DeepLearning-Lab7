@@ -32,7 +32,8 @@ Final-test output is cached and never used for configuration selection.
 ## Protocol
 
 - WikiText-103 training data supplies nested subsets of at least 20, 30, and
-  40 million normalized tokens.
+  40 million normalized tokens. The smallest subset extends to at least
+  20 million retained vocabulary tokens, so filtering cannot violate the minimum.
 - The embedding vocabulary is selected from the smallest subset and held fixed
   across ablations. Only observed vocabulary items contribute training pairs.
 - Seven controlled SGNS configurations vary dimensions, corpus size, window,

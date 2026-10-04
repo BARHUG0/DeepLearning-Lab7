@@ -24,10 +24,10 @@
   },
   "subsets": {
     "20000000": {
-      "normalized_tokens": 20000008,
-      "sentences": 930276,
-      "retained_tokens": 19741082,
-      "encoded_end": 19741082
+      "normalized_tokens": 20265144,
+      "sentences": 942732,
+      "retained_tokens": 20000000,
+      "encoded_end": 20000000
     },
     "30000000": {
       "normalized_tokens": 30000017,
@@ -330,5 +330,6 @@
     }
   ],
   "article_definition": "Top-level WikiText title line, excluding subsection headers.",
-  "token_definition": "Normalized body words, headings and punctuation-only tokens excluded."
+  "token_definition": "Normalized body words, headings and punctuation-only tokens excluded.",
+  "vocabulary_selection_normalized_tokens": 20000008
 }
