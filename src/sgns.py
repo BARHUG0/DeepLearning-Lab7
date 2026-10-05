@@ -77,7 +77,7 @@ def train_configuration(config, glove):
     history_path = RESULTS / f"sgns_{config.name}.json"
     checkpoint_path = ARTIFACTS / f"sgns_{config.name}.pt"
     history = load_json(history_path) if history_path.exists() else {
-        "configuration": asdict(config), "epochs": [], "selection_words": candidates,
+        "configuration": asdict(config), "epochs": [], "shared_vocabulary_size": len(candidates),
         "actual_normalized_tokens": load_json(RESULTS / "preprocessing.json")["subsets"][str(config.tokens)]["normalized_tokens"],
         "retained_tokens": len(raw_ids),
         "pairs_before_subsampling": pair_count(np.diff(np.r_[0, ends]), config.window),

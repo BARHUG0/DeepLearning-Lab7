@@ -1,0 +1,22 @@
+{
+  "name": "dimension_300",
+  "epoch": 3,
+  "configuration": {
+    "name": "dimension_300",
+    "tokens": 40000000,
+    "dimension": 300,
+    "window": 5,
+    "negatives": 5,
+    "sample": 0.0001,
+    "min_count": 5,
+    "learning_rate": 0.025,
+    "min_learning_rate": 0.0001,
+    "epochs": 3,
+    "batch_size": 2048
+  },
+  "actual_normalized_tokens": 40000011,
+  "retained_tokens": 39275085,
+  "training_seconds_to_checkpoint": 450.06902569998056,
+  "search_training_seconds": 2504.880366600177,
+  "criterion": "Fixed-shared-question 3CosAdd accuracy, then WordSim-353 Spearman."
+}
