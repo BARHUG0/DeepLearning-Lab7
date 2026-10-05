@@ -1,0 +1,97 @@
+{
+  "key": "baseline_f0.5",
+  "initialization": "tfidf",
+  "fraction": 0.5,
+  "C": 4.0,
+  "best_block": 4,
+  "validation": {
+    "accuracy": 0.9145,
+    "precision_macro": 0.9144779262307798,
+    "recall_macro": 0.9145000000000001,
+    "f1_macro": 0.9143638418579335
+  },
+  "epochs": [
+    {
+      "optimization_block": 1,
+      "training_loss": 0.18869118034656646,
+      "validation_loss": 0.28623026329278334,
+      "accuracy": 0.9075833333333333,
+      "precision_macro": 0.9074985323532736,
+      "recall_macro": 0.9075833333333334,
+      "f1_macro": 0.9073600382583478
+    },
+    {
+      "optimization_block": 2,
+      "training_loss": 0.15246461673711473,
+      "validation_loss": 0.28158521201776643,
+      "accuracy": 0.91075,
+      "precision_macro": 0.9108937276060926,
+      "recall_macro": 0.91075,
+      "f1_macro": 0.9106460067469397
+    },
+    {
+      "optimization_block": 3,
+      "training_loss": 0.12996714748371999,
+      "validation_loss": 0.2748192984318308,
+      "accuracy": 0.9135,
+      "precision_macro": 0.913554287671242,
+      "recall_macro": 0.9135,
+      "f1_macro": 0.9133232209065659
+    },
+    {
+      "optimization_block": 4,
+      "training_loss": 0.12493609713275267,
+      "validation_loss": 0.2740103055918939,
+      "accuracy": 0.9145,
+      "precision_macro": 0.9144779262307798,
+      "recall_macro": 0.9145000000000001,
+      "f1_macro": 0.9143638418579335
+    },
+    {
+      "optimization_block": 5,
+      "training_loss": 0.12493609713275267,
+      "validation_loss": 0.2740103055918939,
+      "accuracy": 0.9145,
+      "precision_macro": 0.9144779262307798,
+      "recall_macro": 0.9145000000000001,
+      "f1_macro": 0.9143638418579335
+    },
+    {
+      "optimization_block": 6,
+      "training_loss": 0.12493609713275267,
+      "validation_loss": 0.2740103055918939,
+      "accuracy": 0.9145,
+      "precision_macro": 0.9144779262307798,
+      "recall_macro": 0.9145000000000001,
+      "f1_macro": 0.9143638418579335
+    },
+    {
+      "optimization_block": 7,
+      "training_loss": 0.12493609713275267,
+      "validation_loss": 0.2740103055918939,
+      "accuracy": 0.9145,
+      "precision_macro": 0.9144779262307798,
+      "recall_macro": 0.9145000000000001,
+      "f1_macro": 0.9143638418579335
+    }
+  ],
+  "training_documents": 54000,
+  "total_parameters": 400004,
+  "trainable_parameters": 400004,
+  "training_seconds": 17.371307800000068,
+  "checkpoint": "baseline_f0.5.joblib",
+  "curve_unit": "Warm-start L-BFGS blocks, at most 25 optimizer iterations each.",
+  "optimizer_block_size": 25,
+  "search": [
+    {
+      "C": 1.0,
+      "validation_f1": 0.9104949715008064,
+      "seconds": 4.487837099994067
+    },
+    {
+      "C": 4.0,
+      "validation_f1": 0.9143638418579335,
+      "seconds": 6.379520199960098
+    }
+  ]
+}

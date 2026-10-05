@@ -1,0 +1,132 @@
+{
+  "key": "random_trainable_f0.01_lr0.003",
+  "initialization": "random",
+  "variant": "trainable",
+  "fraction": 0.01,
+  "learning_rate": 0.003,
+  "dimension": 300,
+  "training_documents": 1080,
+  "best_epoch": 8,
+  "validation": {
+    "accuracy": 0.8293333333333334,
+    "precision_macro": 0.8304535937236398,
+    "recall_macro": 0.8293333333333334,
+    "f1_macro": 0.8295471788986348
+  },
+  "epochs": [
+    {
+      "epoch": 1,
+      "training_loss": 1.3839894118132414,
+      "validation_loss": 1.3725174458821614,
+      "accuracy": 0.58,
+      "precision_macro": 0.687509707330495,
+      "recall_macro": 0.58,
+      "f1_macro": 0.4980709638151857,
+      "seconds": 0.13628800003789365
+    },
+    {
+      "epoch": 2,
+      "training_loss": 1.3503295147860492,
+      "validation_loss": 1.3331511510213216,
+      "accuracy": 0.6091666666666666,
+      "precision_macro": 0.7078462773561411,
+      "recall_macro": 0.6091666666666666,
+      "f1_macro": 0.5677921490696025,
+      "seconds": 0.14760590001242235
+    },
+    {
+      "epoch": 3,
+      "training_loss": 1.2626589748594497,
+      "validation_loss": 1.2430063222249348,
+      "accuracy": 0.699,
+      "precision_macro": 0.7518300070907649,
+      "recall_macro": 0.699,
+      "f1_macro": 0.6855893471634341,
+      "seconds": 0.15462629997637123
+    },
+    {
+      "epoch": 4,
+      "training_loss": 1.0810272212381715,
+      "validation_loss": 1.0868840408325195,
+      "accuracy": 0.7214166666666667,
+      "precision_macro": 0.769870641765581,
+      "recall_macro": 0.7214166666666666,
+      "f1_macro": 0.712749422026903,
+      "seconds": 0.1472287999931723
+    },
+    {
+      "epoch": 5,
+      "training_loss": 0.7952773928642273,
+      "validation_loss": 0.8765606282552083,
+      "accuracy": 0.76675,
+      "precision_macro": 0.7902468829674874,
+      "recall_macro": 0.7667499999999999,
+      "f1_macro": 0.7591755997912426,
+      "seconds": 0.14929749997099862
+    },
+    {
+      "epoch": 6,
+      "training_loss": 0.4655596234180309,
+      "validation_loss": 0.6719090169270834,
+      "accuracy": 0.8065,
+      "precision_macro": 0.8151639963796828,
+      "recall_macro": 0.8065,
+      "f1_macro": 0.8032856271207798,
+      "seconds": 0.15472009999211878
+    },
+    {
+      "epoch": 7,
+      "training_loss": 0.215723382488445,
+      "validation_loss": 0.5415821406046549,
+      "accuracy": 0.8256666666666667,
+      "precision_macro": 0.8273315290525445,
+      "recall_macro": 0.8256666666666665,
+      "f1_macro": 0.8256664163204663,
+      "seconds": 0.17270310001913458
+    },
+    {
+      "epoch": 8,
+      "training_loss": 0.08632517520476271,
+      "validation_loss": 0.49097518221537273,
+      "accuracy": 0.8293333333333334,
+      "precision_macro": 0.8304535937236398,
+      "recall_macro": 0.8293333333333334,
+      "f1_macro": 0.8295471788986348,
+      "seconds": 0.15718049998395145
+    },
+    {
+      "epoch": 9,
+      "training_loss": 0.03602546871536308,
+      "validation_loss": 0.48575658988952636,
+      "accuracy": 0.829,
+      "precision_macro": 0.8302086900059396,
+      "recall_macro": 0.829,
+      "f1_macro": 0.829219860540971,
+      "seconds": 0.14075329998740926
+    },
+    {
+      "epoch": 10,
+      "training_loss": 0.014497306687688385,
+      "validation_loss": 0.500168758392334,
+      "accuracy": 0.82475,
+      "precision_macro": 0.8272525301886329,
+      "recall_macro": 0.8247500000000001,
+      "f1_macro": 0.825127223391213,
+      "seconds": 0.1463660000008531
+    },
+    {
+      "epoch": 11,
+      "training_loss": 0.008052439480606053,
+      "validation_loss": 0.5226617527008056,
+      "accuracy": 0.8176666666666667,
+      "precision_macro": 0.8222069479523691,
+      "recall_macro": 0.8176666666666667,
+      "f1_macro": 0.8182900509848094,
+      "seconds": 0.13882749999174848
+    }
+  ],
+  "training_seconds": 1.8368645999580622,
+  "total_parameters": 19638644,
+  "trainable_parameters": 19638644,
+  "checkpoint": "classifier_random_trainable_f0.01_lr0.003.pt"
+}

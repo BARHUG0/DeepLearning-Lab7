@@ -1,0 +1,72 @@
+{
+  "key": "sgns_finetuned_f1_lr0.001",
+  "initialization": "sgns",
+  "variant": "finetuned",
+  "fraction": 1.0,
+  "learning_rate": 0.001,
+  "dimension": 300,
+  "training_documents": 108000,
+  "best_epoch": 2,
+  "validation": {
+    "accuracy": 0.91375,
+    "precision_macro": 0.9138910924345224,
+    "recall_macro": 0.91375,
+    "f1_macro": 0.9136986099497312
+  },
+  "epochs": [
+    {
+      "epoch": 1,
+      "training_loss": 0.42059059259185083,
+      "validation_loss": 0.27056540711720783,
+      "accuracy": 0.9115833333333333,
+      "precision_macro": 0.9122872217565883,
+      "recall_macro": 0.9115833333333333,
+      "f1_macro": 0.911370178051923,
+      "seconds": 5.9571823999867775
+    },
+    {
+      "epoch": 2,
+      "training_loss": 0.2213465526236428,
+      "validation_loss": 0.2511346181233724,
+      "accuracy": 0.91375,
+      "precision_macro": 0.9138910924345224,
+      "recall_macro": 0.91375,
+      "f1_macro": 0.9136986099497312,
+      "seconds": 5.615065900026821
+    },
+    {
+      "epoch": 3,
+      "training_loss": 0.17388357632690005,
+      "validation_loss": 0.2561019401550293,
+      "accuracy": 0.91375,
+      "precision_macro": 0.913651834856902,
+      "recall_macro": 0.91375,
+      "f1_macro": 0.9135827731441765,
+      "seconds": 5.6068971999920905
+    },
+    {
+      "epoch": 4,
+      "training_loss": 0.14044055602727112,
+      "validation_loss": 0.2733894475301107,
+      "accuracy": 0.912,
+      "precision_macro": 0.9119486511981367,
+      "recall_macro": 0.912,
+      "f1_macro": 0.9118232474793135,
+      "seconds": 5.61497519997647
+    },
+    {
+      "epoch": 5,
+      "training_loss": 0.11520648729138905,
+      "validation_loss": 0.30116479460398354,
+      "accuracy": 0.9084166666666667,
+      "precision_macro": 0.9082652570845551,
+      "recall_macro": 0.9084166666666667,
+      "f1_macro": 0.9082579307406554,
+      "seconds": 5.637523500015959
+    }
+  ],
+  "training_seconds": 28.48810910002794,
+  "total_parameters": 24065444,
+  "trainable_parameters": 24065444,
+  "checkpoint": "classifier_sgns_finetuned_f1_lr0.001.pt"
+}

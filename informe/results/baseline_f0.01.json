@@ -1,0 +1,79 @@
+{
+  "key": "baseline_f0.01",
+  "initialization": "tfidf",
+  "fraction": 0.01,
+  "C": 4.0,
+  "best_block": 2,
+  "validation": {
+    "accuracy": 0.8331666666666667,
+    "precision_macro": 0.8324438482272508,
+    "recall_macro": 0.8331666666666667,
+    "f1_macro": 0.8323727501887064
+  },
+  "epochs": [
+    {
+      "optimization_block": 1,
+      "training_loss": 0.2563263677528899,
+      "validation_loss": 0.6401777398635056,
+      "accuracy": 0.8326666666666667,
+      "precision_macro": 0.8320199641826977,
+      "recall_macro": 0.8326666666666667,
+      "f1_macro": 0.8318992307892401
+    },
+    {
+      "optimization_block": 2,
+      "training_loss": 0.256624460832917,
+      "validation_loss": 0.641757193691369,
+      "accuracy": 0.8331666666666667,
+      "precision_macro": 0.8324438482272508,
+      "recall_macro": 0.8331666666666667,
+      "f1_macro": 0.8323727501887064
+    },
+    {
+      "optimization_block": 3,
+      "training_loss": 0.256624460832917,
+      "validation_loss": 0.641757193691369,
+      "accuracy": 0.8331666666666667,
+      "precision_macro": 0.8324438482272508,
+      "recall_macro": 0.8331666666666667,
+      "f1_macro": 0.8323727501887064
+    },
+    {
+      "optimization_block": 4,
+      "training_loss": 0.256624460832917,
+      "validation_loss": 0.641757193691369,
+      "accuracy": 0.8331666666666667,
+      "precision_macro": 0.8324438482272508,
+      "recall_macro": 0.8331666666666667,
+      "f1_macro": 0.8323727501887064
+    },
+    {
+      "optimization_block": 5,
+      "training_loss": 0.256624460832917,
+      "validation_loss": 0.641757193691369,
+      "accuracy": 0.8331666666666667,
+      "precision_macro": 0.8324438482272508,
+      "recall_macro": 0.8331666666666667,
+      "f1_macro": 0.8323727501887064
+    }
+  ],
+  "training_documents": 1080,
+  "total_parameters": 28156,
+  "trainable_parameters": 28156,
+  "training_seconds": 0.7314963999669999,
+  "checkpoint": "baseline_f0.01.joblib",
+  "curve_unit": "Warm-start L-BFGS blocks, at most 25 optimizer iterations each.",
+  "optimizer_block_size": 25,
+  "search": [
+    {
+      "C": 1.0,
+      "validation_f1": 0.8307898247407639,
+      "seconds": 0.10970470000756904
+    },
+    {
+      "C": 4.0,
+      "validation_f1": 0.8323727501887064,
+      "seconds": 0.15311740001197904
+    }
+  ]
+}

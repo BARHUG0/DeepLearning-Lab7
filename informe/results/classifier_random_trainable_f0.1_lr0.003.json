@@ -1,0 +1,72 @@
+{
+  "key": "random_trainable_f0.1_lr0.003",
+  "initialization": "random",
+  "variant": "trainable",
+  "fraction": 0.1,
+  "learning_rate": 0.003,
+  "dimension": 300,
+  "training_documents": 10800,
+  "best_epoch": 2,
+  "validation": {
+    "accuracy": 0.8898333333333334,
+    "precision_macro": 0.8899517333750616,
+    "recall_macro": 0.8898333333333333,
+    "f1_macro": 0.8898724119472542
+  },
+  "epochs": [
+    {
+      "epoch": 1,
+      "training_loss": 0.9613726286534909,
+      "validation_loss": 0.38179723294576007,
+      "accuracy": 0.87375,
+      "precision_macro": 0.8744086398202721,
+      "recall_macro": 0.87375,
+      "f1_macro": 0.8734391149461115,
+      "seconds": 0.6003169000032358
+    },
+    {
+      "epoch": 2,
+      "training_loss": 0.21537090526686775,
+      "validation_loss": 0.3281594292322795,
+      "accuracy": 0.8898333333333334,
+      "precision_macro": 0.8899517333750616,
+      "recall_macro": 0.8898333333333333,
+      "f1_macro": 0.8898724119472542,
+      "seconds": 0.5588444999884814
+    },
+    {
+      "epoch": 3,
+      "training_loss": 0.0787192945347892,
+      "validation_loss": 0.3568320369720459,
+      "accuracy": 0.8873333333333333,
+      "precision_macro": 0.8868823280908422,
+      "recall_macro": 0.8873333333333333,
+      "f1_macro": 0.8870281106520779,
+      "seconds": 0.5893662000307813
+    },
+    {
+      "epoch": 4,
+      "training_loss": 0.028896050458015115,
+      "validation_loss": 0.41270751190185545,
+      "accuracy": 0.883,
+      "precision_macro": 0.8835939307514202,
+      "recall_macro": 0.883,
+      "f1_macro": 0.8829487195485264,
+      "seconds": 0.5941441000322811
+    },
+    {
+      "epoch": 5,
+      "training_loss": 0.009825661016835107,
+      "validation_loss": 0.4532083683013916,
+      "accuracy": 0.8830833333333333,
+      "precision_macro": 0.8827811927744257,
+      "recall_macro": 0.8830833333333333,
+      "f1_macro": 0.8828988897543587,
+      "seconds": 0.5374262999976054
+    }
+  ],
+  "training_seconds": 2.9326290000462905,
+  "total_parameters": 19638644,
+  "trainable_parameters": 19638644,
+  "checkpoint": "classifier_random_trainable_f0.1_lr0.003.pt"
+}

@@ -1,0 +1,72 @@
+{
+  "key": "glove_finetuned_f0.5_lr0.003",
+  "initialization": "glove",
+  "variant": "finetuned",
+  "fraction": 0.5,
+  "learning_rate": 0.003,
+  "dimension": 100,
+  "training_documents": 54000,
+  "best_epoch": 2,
+  "validation": {
+    "accuracy": 0.9145,
+    "precision_macro": 0.9148729980765793,
+    "recall_macro": 0.9144999999999999,
+    "f1_macro": 0.9145307406561253
+  },
+  "epochs": [
+    {
+      "epoch": 1,
+      "training_loss": 0.41253614544868467,
+      "validation_loss": 0.2760697272618612,
+      "accuracy": 0.9120833333333334,
+      "precision_macro": 0.9127395681576378,
+      "recall_macro": 0.9120833333333332,
+      "f1_macro": 0.9120084085224007,
+      "seconds": 4.3861246999586
+    },
+    {
+      "epoch": 2,
+      "training_loss": 0.2167392049188967,
+      "validation_loss": 0.256914213180542,
+      "accuracy": 0.9145,
+      "precision_macro": 0.9148729980765793,
+      "recall_macro": 0.9144999999999999,
+      "f1_macro": 0.9145307406561253,
+      "seconds": 4.364434399991296
+    },
+    {
+      "epoch": 3,
+      "training_loss": 0.15392746939261753,
+      "validation_loss": 0.26201252841949463,
+      "accuracy": 0.9115,
+      "precision_macro": 0.911683950080883,
+      "recall_macro": 0.9115,
+      "f1_macro": 0.9114540446633671,
+      "seconds": 4.371336499985773
+    },
+    {
+      "epoch": 4,
+      "training_loss": 0.10724487093642907,
+      "validation_loss": 0.297489800453186,
+      "accuracy": 0.9096666666666666,
+      "precision_macro": 0.9099025129604744,
+      "recall_macro": 0.9096666666666666,
+      "f1_macro": 0.9093892767045693,
+      "seconds": 4.40146049996838
+    },
+    {
+      "epoch": 5,
+      "training_loss": 0.07458607817137683,
+      "validation_loss": 0.3341165196100871,
+      "accuracy": 0.9074166666666666,
+      "precision_macro": 0.907653795262436,
+      "recall_macro": 0.9074166666666666,
+      "f1_macro": 0.9074002807180068,
+      "seconds": 4.3764110000338405
+    }
+  ],
+  "training_seconds": 21.98680750001222,
+  "total_parameters": 40013544,
+  "trainable_parameters": 40013544,
+  "checkpoint": "classifier_glove_finetuned_f0.5_lr0.003.pt"
+}

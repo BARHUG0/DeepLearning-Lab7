@@ -1,0 +1,142 @@
+{
+  "key": "sgns_frozen_f0.5_lr0.001",
+  "initialization": "sgns",
+  "variant": "frozen",
+  "fraction": 0.5,
+  "learning_rate": 0.001,
+  "dimension": 300,
+  "training_documents": 54000,
+  "best_epoch": 11,
+  "validation": {
+    "accuracy": 0.88475,
+    "precision_macro": 0.8852361940718101,
+    "recall_macro": 0.88475,
+    "f1_macro": 0.8847517340373032
+  },
+  "epochs": [
+    {
+      "epoch": 1,
+      "training_loss": 0.6746478076952475,
+      "validation_loss": 0.41828754170735677,
+      "accuracy": 0.8611666666666666,
+      "precision_macro": 0.8611404783222423,
+      "recall_macro": 0.8611666666666666,
+      "f1_macro": 0.8610526888038879,
+      "seconds": 0.610695100040175
+    },
+    {
+      "epoch": 2,
+      "training_loss": 0.3911628288516292,
+      "validation_loss": 0.3806834831237793,
+      "accuracy": 0.8705833333333334,
+      "precision_macro": 0.8712292679240057,
+      "recall_macro": 0.8705833333333333,
+      "f1_macro": 0.870630517850358,
+      "seconds": 0.5638114999746904
+    },
+    {
+      "epoch": 3,
+      "training_loss": 0.363461710717943,
+      "validation_loss": 0.36388523228963215,
+      "accuracy": 0.876,
+      "precision_macro": 0.8764912335502918,
+      "recall_macro": 0.8759999999999999,
+      "f1_macro": 0.8759332939131297,
+      "seconds": 0.5744722000090405
+    },
+    {
+      "epoch": 4,
+      "training_loss": 0.34969019752961616,
+      "validation_loss": 0.3540638682047526,
+      "accuracy": 0.87875,
+      "precision_macro": 0.8785568917683441,
+      "recall_macro": 0.87875,
+      "f1_macro": 0.8785532512024,
+      "seconds": 0.6137599999783561
+    },
+    {
+      "epoch": 5,
+      "training_loss": 0.3409859439267053,
+      "validation_loss": 0.3490183137257894,
+      "accuracy": 0.8805,
+      "precision_macro": 0.8803850852514589,
+      "recall_macro": 0.8805,
+      "f1_macro": 0.880215958337175,
+      "seconds": 0.5856517000356689
+    },
+    {
+      "epoch": 6,
+      "training_loss": 0.3342808436817593,
+      "validation_loss": 0.34557871373494464,
+      "accuracy": 0.87975,
+      "precision_macro": 0.8798500196035066,
+      "recall_macro": 0.87975,
+      "f1_macro": 0.879731434928971,
+      "seconds": 0.5927357000182383
+    },
+    {
+      "epoch": 7,
+      "training_loss": 0.3292723154668455,
+      "validation_loss": 0.3439848556518555,
+      "accuracy": 0.881,
+      "precision_macro": 0.8809692539558555,
+      "recall_macro": 0.8809999999999999,
+      "f1_macro": 0.8809759565453429,
+      "seconds": 0.6243765999679454
+    },
+    {
+      "epoch": 8,
+      "training_loss": 0.3245694376097785,
+      "validation_loss": 0.3417191632588704,
+      "accuracy": 0.8804166666666666,
+      "precision_macro": 0.8826519979854104,
+      "recall_macro": 0.8804166666666666,
+      "f1_macro": 0.8808791907330936,
+      "seconds": 0.6073024999932386
+    },
+    {
+      "epoch": 9,
+      "training_loss": 0.321310622992339,
+      "validation_loss": 0.33480372619628906,
+      "accuracy": 0.8840833333333333,
+      "precision_macro": 0.8846153337049318,
+      "recall_macro": 0.8840833333333333,
+      "f1_macro": 0.884178628237363,
+      "seconds": 0.6083004999672994
+    },
+    {
+      "epoch": 10,
+      "training_loss": 0.31798411564473755,
+      "validation_loss": 0.3340478108723958,
+      "accuracy": 0.88425,
+      "precision_macro": 0.8847640772290065,
+      "recall_macro": 0.88425,
+      "f1_macro": 0.8842488381541924,
+      "seconds": 0.6477549999835901
+    },
+    {
+      "epoch": 11,
+      "training_loss": 0.31587818588150873,
+      "validation_loss": 0.3298986752827962,
+      "accuracy": 0.88475,
+      "precision_macro": 0.8852361940718101,
+      "recall_macro": 0.88475,
+      "f1_macro": 0.8847517340373032,
+      "seconds": 0.6337028999696486
+    },
+    {
+      "epoch": 12,
+      "training_loss": 0.3123435977255857,
+      "validation_loss": 0.33388355191548663,
+      "accuracy": 0.8843333333333333,
+      "precision_macro": 0.8836801791974312,
+      "recall_macro": 0.8843333333333333,
+      "f1_macro": 0.8837870107838017,
+      "seconds": 0.6176594999851659
+    }
+  ],
+  "training_seconds": 7.642181500035804,
+  "total_parameters": 24065444,
+  "trainable_parameters": 39044,
+  "checkpoint": "classifier_sgns_frozen_f0.5_lr0.001.pt"
+}

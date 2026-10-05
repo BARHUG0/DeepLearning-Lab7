@@ -1,0 +1,142 @@
+{
+  "key": "gensim_frozen_f0.1_lr0.001",
+  "initialization": "gensim",
+  "variant": "frozen",
+  "fraction": 0.1,
+  "learning_rate": 0.001,
+  "dimension": 300,
+  "training_documents": 10800,
+  "best_epoch": 12,
+  "validation": {
+    "accuracy": 0.8710833333333333,
+    "precision_macro": 0.8716664002350929,
+    "recall_macro": 0.8710833333333333,
+    "f1_macro": 0.8711213522567792
+  },
+  "epochs": [
+    {
+      "epoch": 1,
+      "training_loss": 1.233603584324872,
+      "validation_loss": 1.000816775004069,
+      "accuracy": 0.8221666666666667,
+      "precision_macro": 0.8212911955672946,
+      "recall_macro": 0.8221666666666667,
+      "f1_macro": 0.8190157302668895,
+      "seconds": 0.1509753999998793
+    },
+    {
+      "epoch": 2,
+      "training_loss": 0.7974706565892254,
+      "validation_loss": 0.6226603469848633,
+      "accuracy": 0.83225,
+      "precision_macro": 0.8354892291836429,
+      "recall_macro": 0.83225,
+      "f1_macro": 0.8313071529083029,
+      "seconds": 0.19577580003533512
+    },
+    {
+      "epoch": 3,
+      "training_loss": 0.5539413303799099,
+      "validation_loss": 0.49249924914042154,
+      "accuracy": 0.8478333333333333,
+      "precision_macro": 0.8482934305686823,
+      "recall_macro": 0.8478333333333334,
+      "f1_macro": 0.8479697352370784,
+      "seconds": 0.1797285999637097
+    },
+    {
+      "epoch": 4,
+      "training_loss": 0.4709329632035008,
+      "validation_loss": 0.445750638961792,
+      "accuracy": 0.8539166666666667,
+      "precision_macro": 0.853345713755054,
+      "recall_macro": 0.8539166666666667,
+      "f1_macro": 0.853595837476611,
+      "seconds": 0.2042986000305973
+    },
+    {
+      "epoch": 5,
+      "training_loss": 0.43677977742972196,
+      "validation_loss": 0.42454590161641437,
+      "accuracy": 0.8596666666666667,
+      "precision_macro": 0.8598103837496384,
+      "recall_macro": 0.8596666666666667,
+      "f1_macro": 0.8597029169394154,
+      "seconds": 0.2189994000364095
+    },
+    {
+      "epoch": 6,
+      "training_loss": 0.4140781980973703,
+      "validation_loss": 0.41257164637247723,
+      "accuracy": 0.8636666666666667,
+      "precision_macro": 0.8645504501944948,
+      "recall_macro": 0.8636666666666666,
+      "f1_macro": 0.8636887509227561,
+      "seconds": 0.20078319997992367
+    },
+    {
+      "epoch": 7,
+      "training_loss": 0.4011088545234115,
+      "validation_loss": 0.4026388823191325,
+      "accuracy": 0.8641666666666666,
+      "precision_macro": 0.8637876557204762,
+      "recall_macro": 0.8641666666666666,
+      "f1_macro": 0.8639421007389225,
+      "seconds": 0.193588100024499
+    },
+    {
+      "epoch": 8,
+      "training_loss": 0.39074505033316437,
+      "validation_loss": 0.39570027033487953,
+      "accuracy": 0.8660833333333333,
+      "precision_macro": 0.865742695298967,
+      "recall_macro": 0.8660833333333333,
+      "f1_macro": 0.8658335983534782,
+      "seconds": 0.19079859997145832
+    },
+    {
+      "epoch": 9,
+      "training_loss": 0.38365687984007374,
+      "validation_loss": 0.3909375203450521,
+      "accuracy": 0.869,
+      "precision_macro": 0.8695191506024438,
+      "recall_macro": 0.8690000000000001,
+      "f1_macro": 0.8690061892063474,
+      "seconds": 0.1880208000075072
+    },
+    {
+      "epoch": 10,
+      "training_loss": 0.3737798904048072,
+      "validation_loss": 0.3886233234405518,
+      "accuracy": 0.8669166666666667,
+      "precision_macro": 0.8660206125589311,
+      "recall_macro": 0.8669166666666667,
+      "f1_macro": 0.866291881449105,
+      "seconds": 0.19149779999861494
+    },
+    {
+      "epoch": 11,
+      "training_loss": 0.3692461531692081,
+      "validation_loss": 0.3829902509053548,
+      "accuracy": 0.8709166666666667,
+      "precision_macro": 0.8715857148408669,
+      "recall_macro": 0.8709166666666666,
+      "f1_macro": 0.8709025560980728,
+      "seconds": 0.17201849998673424
+    },
+    {
+      "epoch": 12,
+      "training_loss": 0.365051648484336,
+      "validation_loss": 0.3786273587544759,
+      "accuracy": 0.8710833333333333,
+      "precision_macro": 0.8716664002350929,
+      "recall_macro": 0.8710833333333333,
+      "f1_macro": 0.8711213522567792,
+      "seconds": 0.18298730003880337
+    }
+  ],
+  "training_seconds": 2.598063200013712,
+  "total_parameters": 24065444,
+  "trainable_parameters": 39044,
+  "checkpoint": "classifier_gensim_frozen_f0.1_lr0.001.pt"
+}

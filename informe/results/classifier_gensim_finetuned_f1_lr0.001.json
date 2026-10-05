@@ -1,0 +1,82 @@
+{
+  "key": "gensim_finetuned_f1_lr0.001",
+  "initialization": "gensim",
+  "variant": "finetuned",
+  "fraction": 1.0,
+  "learning_rate": 0.001,
+  "dimension": 300,
+  "training_documents": 108000,
+  "best_epoch": 3,
+  "validation": {
+    "accuracy": 0.9145833333333333,
+    "precision_macro": 0.9144858419673958,
+    "recall_macro": 0.9145833333333333,
+    "f1_macro": 0.9144366154152967
+  },
+  "epochs": [
+    {
+      "epoch": 1,
+      "training_loss": 0.4255827184209117,
+      "validation_loss": 0.2723190196355184,
+      "accuracy": 0.9121666666666667,
+      "precision_macro": 0.9129710747778019,
+      "recall_macro": 0.9121666666666666,
+      "f1_macro": 0.9120260558466586,
+      "seconds": 6.088304499979131
+    },
+    {
+      "epoch": 2,
+      "training_loss": 0.22271924994168457,
+      "validation_loss": 0.2526145175298055,
+      "accuracy": 0.9141666666666667,
+      "precision_macro": 0.9144666304610668,
+      "recall_macro": 0.9141666666666666,
+      "f1_macro": 0.9141228614792484,
+      "seconds": 5.662336899957154
+    },
+    {
+      "epoch": 3,
+      "training_loss": 0.17561086116455218,
+      "validation_loss": 0.25691361490885417,
+      "accuracy": 0.9145833333333333,
+      "precision_macro": 0.9144858419673958,
+      "recall_macro": 0.9145833333333333,
+      "f1_macro": 0.9144366154152967,
+      "seconds": 5.704720099980477
+    },
+    {
+      "epoch": 4,
+      "training_loss": 0.1419758088014744,
+      "validation_loss": 0.27306257661183675,
+      "accuracy": 0.9121666666666667,
+      "precision_macro": 0.9121939715855636,
+      "recall_macro": 0.9121666666666667,
+      "f1_macro": 0.9120230723888162,
+      "seconds": 5.707674500008579
+    },
+    {
+      "epoch": 5,
+      "training_loss": 0.11657095835606257,
+      "validation_loss": 0.298195232073466,
+      "accuracy": 0.9086666666666666,
+      "precision_macro": 0.9085758412461694,
+      "recall_macro": 0.9086666666666667,
+      "f1_macro": 0.90852780734351,
+      "seconds": 5.653598200005945
+    },
+    {
+      "epoch": 6,
+      "training_loss": 0.09625348494671009,
+      "validation_loss": 0.3300700248082479,
+      "accuracy": 0.9021666666666667,
+      "precision_macro": 0.9023608885122789,
+      "recall_macro": 0.9021666666666667,
+      "f1_macro": 0.9019381522965868,
+      "seconds": 5.657823600049596
+    }
+  ],
+  "training_seconds": 34.56383239995921,
+  "total_parameters": 24065444,
+  "trainable_parameters": 24065444,
+  "checkpoint": "classifier_gensim_finetuned_f1_lr0.001.pt"
+}

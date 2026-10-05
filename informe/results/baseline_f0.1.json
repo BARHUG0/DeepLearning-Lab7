@@ -1,0 +1,79 @@
+{
+  "key": "baseline_f0.1",
+  "initialization": "tfidf",
+  "fraction": 0.1,
+  "C": 4.0,
+  "best_block": 2,
+  "validation": {
+    "accuracy": 0.892,
+    "precision_macro": 0.8917084670081982,
+    "recall_macro": 0.892,
+    "f1_macro": 0.8916774558530917
+  },
+  "epochs": [
+    {
+      "optimization_block": 1,
+      "training_loss": 0.17189425167954642,
+      "validation_loss": 0.37245907930733135,
+      "accuracy": 0.8919166666666667,
+      "precision_macro": 0.8917890777351727,
+      "recall_macro": 0.8919166666666667,
+      "f1_macro": 0.8916200192522055
+    },
+    {
+      "optimization_block": 2,
+      "training_loss": 0.15752693203336335,
+      "validation_loss": 0.3776227486966746,
+      "accuracy": 0.892,
+      "precision_macro": 0.8917084670081982,
+      "recall_macro": 0.892,
+      "f1_macro": 0.8916774558530917
+    },
+    {
+      "optimization_block": 3,
+      "training_loss": 0.1575057041497068,
+      "validation_loss": 0.37762838350614675,
+      "accuracy": 0.8916666666666667,
+      "precision_macro": 0.8914630839465928,
+      "recall_macro": 0.8916666666666666,
+      "f1_macro": 0.8913597476478927
+    },
+    {
+      "optimization_block": 4,
+      "training_loss": 0.1575057041497068,
+      "validation_loss": 0.37762838350614675,
+      "accuracy": 0.8916666666666667,
+      "precision_macro": 0.8914630839465928,
+      "recall_macro": 0.8916666666666666,
+      "f1_macro": 0.8913597476478927
+    },
+    {
+      "optimization_block": 5,
+      "training_loss": 0.1575057041497068,
+      "validation_loss": 0.37762838350614675,
+      "accuracy": 0.8916666666666667,
+      "precision_macro": 0.8914630839465928,
+      "recall_macro": 0.8916666666666666,
+      "f1_macro": 0.8913597476478927
+    }
+  ],
+  "training_documents": 10800,
+  "total_parameters": 240988,
+  "trainable_parameters": 240988,
+  "training_seconds": 4.299342199985404,
+  "checkpoint": "baseline_f0.1.joblib",
+  "curve_unit": "Warm-start L-BFGS blocks, at most 25 optimizer iterations each.",
+  "optimizer_block_size": 25,
+  "search": [
+    {
+      "C": 1.0,
+      "validation_f1": 0.8854486381828053,
+      "seconds": 0.9465536999632604
+    },
+    {
+      "C": 4.0,
+      "validation_f1": 0.8916774558530917,
+      "seconds": 1.3888564999797381
+    }
+  ]
+}
