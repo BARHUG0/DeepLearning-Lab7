@@ -31,6 +31,12 @@ from the preceding checkpoint.
 the PDF through Quarto, and verifies all experiments and the five-page limit.
 It never creates commits or pushes. If any stage fails, it stops with its error.
 
+The submission archive supports rerunning the presentation notebook without
+training. A completely fresh training run should use a separate folder containing
+`src/`, `requirements.txt`, `README.md`, and `informe/research.md`, without the
+recorded results or checkpoints. This preserves the completed experiment and its
+locked test evaluation. Recorded summaries alone are not training checkpoints.
+
 The official AG News test set and SimLex-999 are read only by the final stage.
 Final-test output is cached and never used for configuration selection.
 

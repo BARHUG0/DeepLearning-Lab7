@@ -127,6 +127,30 @@ def check_classification():
     final = float(torch.nn.functional.cross_entropy(trainable(ids, offsets), target).detach())
     assert final < initial
     assert torch.equal(trainable.embedding.weight[0], torch.zeros(2))
+    check_test_lock()
+
+
+def check_test_lock():
+    from tempfile import TemporaryDirectory
+    from pathlib import Path
+    from . import classification
+    from .common import ARTIFACTS, directories, save_json
+
+    directories()
+    original = classification.RESULTS
+    with TemporaryDirectory(dir=ARTIFACTS) as temporary:
+        classification.RESULTS = Path(temporary)
+        try:
+            save_json(classification.RESULTS / "classification_selection.json", {})
+            save_json(classification.RESULTS / "final_evaluation.json", {"selection_sha256": "stale"})
+            try:
+                classification.final_evaluation()
+            except RuntimeError as error:
+                assert "Selections changed" in str(error)
+            else:
+                raise AssertionError("Changed selections must not reuse locked test results.")
+        finally:
+            classification.RESULTS = original
 
 
 if __name__ == "__main__":

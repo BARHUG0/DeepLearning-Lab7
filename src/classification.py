@@ -345,10 +345,14 @@ def final_evaluation():
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
 
-    if (RESULTS / "final_evaluation.json").exists():
-        print("Final evaluation already locked; reusing recorded test results.", flush=True)
-        return load_json(RESULTS / "final_evaluation.json")
     selection_path = RESULTS / "classification_selection.json"
+    if (RESULTS / "final_evaluation.json").exists():
+        recorded = load_json(RESULTS / "final_evaluation.json")
+        current_hash = hashlib.sha256(selection_path.read_bytes()).hexdigest()
+        if recorded["selection_sha256"] != current_hash:
+            raise RuntimeError("Selections changed after locked test evaluation. Use a separate fresh experiment folder.")
+        print("Final evaluation already locked; reusing recorded test results.", flush=True)
+        return recorded
     selection = load_json(selection_path)
     models = load_models()
     data = load_dataset(

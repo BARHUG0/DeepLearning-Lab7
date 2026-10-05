@@ -141,11 +141,16 @@ def report_text():
             row.get("without_exclusion", [("OOV", 0)])[0][0],
         ])
     epoch_table = []
+    run_labels = {
+        "reference": "ref", "dimension_50": "dim50", "dimension_300": "dim300",
+        "corpus_20m": "20M", "corpus_30m": "30M", "window_2": "win2",
+        "negatives_10": "neg10",
+    }
     for name in dict.fromkeys(row["name"] for row in iterations):
         rows = [row for row in iterations if row["name"] == name]
         selected = max(rows, key=lambda row: (row["accuracy"], row["wordsim"]))
         epoch_table.append([
-            name.replace("dimension_", "dim_"), f"{selected['actual_tokens'] / 1e6:.0f}",
+            run_labels[name], f"{selected['actual_tokens'] / 1e6:.2f}",
             selected["dimension"], selected["window"], selected["negatives"], selected["epoch"],
             number(selected["loss"]), number(selected["accuracy"]), number(selected["wordsim"]),
             f"{sum(row['seconds'] for row in rows):.0f}", f"{max(row['peak_gpu_mb'] for row in rows):.0f}",
@@ -180,6 +185,10 @@ def report_text():
         "All embedding initializations have 100 dimensions."
         if len(set(dimensions.values())) == 1 else
         "The selected SGNS/gensim dimension differs from GloVe's 100D; classification differences therefore include a dimension confound. Random vectors match SGNS."
+    )
+    own_summary = "; ".join(
+        f"{name}: {sum(row.get('answer_rank') == 1 for row in arithmetic['models'][name]['individual'])}/18 top-one correct"
+        for name in ("sgns", "gensim", "glove")
     )
     loss_observation = (
         f"In the reference run, loss changes from {reference[1]['loss']:.3f} at epoch two "
@@ -312,6 +321,8 @@ For man → woman, king → queen:
 
 {markdown_table(["Model", "Top five with cosine", "Queen rank", "Cosine", "First, no exclusion"], individual)}
 
+Across all original analogies: {own_summary}.
+
 The benchmark uses the same {len(arithmetic['shared_words']):,} most frequent
 shared words. Coverage is
 {arithmetic['models']['sgns']['analogies']['evaluated']:,}/19,544 questions.
@@ -330,8 +341,9 @@ The strongest SGNS category is {best_categories[0][0]} at {best_categories[0][1]
 the weakest is {best_categories[-1][0]} at {best_categories[-1][1]:.3f}.
 Query words can dominate without exclusion, and difference vectors are not
 perfectly parallel. Consequently the familiar king−man+woman expression is
-approximate retrieval, not equality. A 500-word thematic t-SNE is in the notebook;
-neighborhood-based theme selection itself favors visible grouping.
+approximate retrieval, not equality. A 500-word thematic t-SNE is in the notebook:
+technology and countries form recognizable groups, while verbs and animals
+overlap more. Neighborhood-based theme selection itself favors visible grouping.
 
 \\newpage
 
@@ -346,12 +358,13 @@ of C using warm-start logistic regression; its loss curve uses optimizer blocks.
 {dimension_caveat}
 
 Validation results below select the better learning rate within each variant.
-P/R/F denotes macro precision/recall/F1; parameter counts include embedding rows.
+P/R/F denotes macro precision/recall/F1; parameter counts are in millions and
+include embedding rows. Exact counts remain in the notebook and CSV.
 
-{markdown_table(["Initialization", "Variant", "Acc", "P/R/F", "Total/trainable", "Seconds"], [
+{markdown_table(["Initialization", "Variant", "Acc", "P/R/F", "Total/trainable M", "Seconds"], [
     [row["model"], row["variant"], number(row["accuracy"]),
      "/".join(number(row[key]) for key in ("precision_macro", "recall_macro", "f1_macro")),
-     f"{row['parameters']:,}/{row['trainable']:,}", f"{row['seconds']:.1f}"]
+     f"{row['parameters'] / 1e6:.3f}/{row['trainable'] / 1e6:.3f}", f"{row['seconds']:.1f}"]
     for row in validation
 ])}
 
@@ -366,8 +379,10 @@ evaluation. No test score changes model settings.
 Variant selections: {frozen_choice}.
 The highest full-data test F1 belongs to {best_test[0]} at {best_test[1]:.3f}.
 The 1% experiment contains 1,080 training documents, with validation unchanged.
-Coverage and limited labeled data explain why adaptation benefits can differ
-between initialization and training fractions.
+Fine-tuning wins validation selection at all four fractions; freezing reduces
+trainable parameters but never gives the best F1 here. Pretrained vectors do
+not beat TF-IDF or random vectors at full data, but all three improve over both
+at 1%. The narrow full-data margins do not establish statistical superiority.
 
 \\newpage
 
@@ -400,9 +415,10 @@ Similarity coverage is retained in the accompanying comparison CSV and notebook.
 
 The corpus-size experiment measures a within-SGNS scaling trend, not a causal
 decomposition of the GloVe gap. GloVe differs in corpus composition, tokenization,
-objective and training budget. Window and negative-count comparisons must be
-read together with category-specific scores; neither guarantees syntactic or
-semantic improvement in every category. Gensim discrepancies remain consistent
+objective and training budget. Small windows reduce semantic accuracy more than
+syntactic accuracy here, but do not improve absolute syntactic accuracy. More
+negatives improve overall accuracy under the measured budget, not necessarily
+every category. Gensim discrepancies remain consistent
 with the documented optimization differences rather than proof that either
 objective is implemented incorrectly. Single-seed results, approximate sentence
 splitting and fixed vocabulary limit generalization.
@@ -491,6 +507,12 @@ def notebook_document():
         code("print(inspect.getsource(parallelism))\nfor name, model in arithmetic_results['models'].items():\n    print(name, model['parallelism']['mean_cosine'], model['parallelism']['comparisons'])\n    display(pd.DataFrame(model['parallelism']['categories']).T)"),
         markdown("### Thematic t-SNE\n\nFive groups each contribute 100 nonoverlapping words from anchor neighborhoods. Such selection favors visible clustering; this visualization is exploratory, not independent evidence of semantic separation."),
         code("display(Image(filename=str(FIGURES / 'tsne.png')))\ndisplay(pd.DataFrame(load_json(RESULTS / 'tsne.json')['groups']).T)"),
+        markdown(
+            "The observed technology group is compact. Countries separate into recognizable "
+            "European and Asian neighborhoods, and numbers form subgroups. Animals and verbs "
+            "overlap more, with some common verbs near the number region. The expected themes "
+            "are visible but not perfectly separated; axes have no semantic meaning."
+        ),
         markdown("## 6. AG News end-to-end classification\n\nThe same tokenizer converts text to IDs, EmbeddingBag averages vectors, and an MLP predicts the class. A stratified 10% validation split is fixed. All TF-IDF fitting, tuning and epoch selection use training/validation only."),
         code("print(inspect.getsource(BagClassifier))\nif RUN_TRAINING:\n    classification()\nselection = load_json(RESULTS / 'classification_selection.json')\ndisplay(pd.Series(selection['split']))\ndisplay(pd.DataFrame(validation_rows()))"),
         code("display(pd.DataFrame([{'initialization': name, 'split': split, **values} for name, splits in selection['oov'].items() for split, values in splits.items()]))\ndisplay(Image(filename=str(FIGURES / 'classification_training.png')))"),
@@ -615,11 +637,13 @@ def validate_deliverables(require_pdf=True):
         assert 1 <= pages <= 5, f"Report has {pages} pages, maximum is five."
         checks["pdf_pages"] = pages
         archive_path = ARTIFACTS / "submission.zip"
+        checks["submission_archive"] = str(archive_path.relative_to(ROOT))
+        save_json(RESULTS / "deliverable_checks.json", checks)
         files = [
             ROOT / "README.md", ROOT / "requirements.txt",
             ROOT / "notebooks" / "nlp_embeddings.ipynb",
             ROOT / "informe" / "report.md", pdf, ROOT / "informe" / "research.md",
-            ARTIFACTS / "best_sgns.kv",
+            ARTIFACTS / "best_sgns.kv", ARTIFACTS / "vocabulary.json",
             *sorted((ROOT / "src").glob("*.py")), ROOT / "src" / "finish.ps1",
             *sorted(RESULTS.glob("*.json")), *sorted(RESULTS.glob("*.csv")),
             *sorted(FIGURES.glob("*.png")),
@@ -630,7 +654,6 @@ def validate_deliverables(require_pdf=True):
         with ZipFile(archive_path) as archive:
             assert archive.testzip() is None
             assert "informe/artifacts/best_sgns.kv" in archive.namelist()
-        checks["submission_archive"] = str(archive_path.relative_to(ROOT))
     save_json(RESULTS / "deliverable_checks.json", checks)
     print(checks)
 
