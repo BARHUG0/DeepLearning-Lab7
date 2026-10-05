@@ -1,0 +1,9 @@
+{
+  "complete_embedding_runs": 7,
+  "test_configurations": 20,
+  "executed_notebook_cells": 20,
+  "exported_vectors": 80087,
+  "vectors_sha256": "10c81b3dac093c97cb52544ada0376dc1f872bb9709c458b53ea6a903c44b94b",
+  "pdf_pages": 5,
+  "submission_archive": "informe\\artifacts\\submission.zip"
+}
