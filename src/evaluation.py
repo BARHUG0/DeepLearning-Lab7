@@ -55,6 +55,8 @@ def similarity_benchmark(vectors, name="wordsim353.tsv"):
     total = 0
     with open(datapath(name), encoding="utf-8") as source:
         for line in source:
+            if line.lstrip().startswith("#"):
+                continue
             fields = line.split()
             if len(fields) < 3:
                 continue

@@ -59,7 +59,7 @@ def check_sgns():
 
 def check_analogies():
     from gensim.models import KeyedVectors
-    from .evaluation import analogia, analogy_scores
+    from .evaluation import analogia, analogy_scores, similarity_benchmark
     import torch
 
     vectors = KeyedVectors(3)
@@ -74,6 +74,8 @@ def check_analogies():
     matrix = torch.nn.functional.normalize(torch.tensor(vectors.vectors), dim=1)
     assert torch.isfinite(analogy_scores(matrix, 0, 1, 2, "3CosMul")).all()
     assert len(analogia(vectors, "man", "woman", "king", 5, exclude=False)) == 5
+    benchmark = similarity_benchmark(vectors)
+    assert benchmark["total"] == 353
 
 
 def check_embedding_bag():
