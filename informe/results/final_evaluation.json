@@ -1,0 +1,791 @@
+{
+  "selection_sha256": "2e347782e8a3bd7fd76f436e14a9fcfbb07779925660443eb2f4fbc85c39fbba",
+  "test_fingerprint": "0ebcc57b6aea2fc9",
+  "test_documents": 7600,
+  "models": {
+    "tfidf_f0.01": {
+      "accuracy": 0.8225,
+      "precision_macro": 0.8213004468603824,
+      "recall_macro": 0.8225,
+      "f1_macro": 0.8214790912986926,
+      "selected_configuration": "baseline_f0.01",
+      "oov": null,
+      "confusion_matrix": [
+        [
+          1585,
+          105,
+          104,
+          106
+        ],
+        [
+          74,
+          1765,
+          25,
+          36
+        ],
+        [
+          123,
+          64,
+          1438,
+          275
+        ],
+        [
+          119,
+          95,
+          223,
+          1463
+        ]
+      ],
+      "fraction": 0.01
+    },
+    "tfidf_f0.1": {
+      "accuracy": 0.8903947368421052,
+      "precision_macro": 0.8899456987103836,
+      "recall_macro": 0.8903947368421052,
+      "f1_macro": 0.8900291499825729,
+      "selected_configuration": "baseline_f0.1",
+      "oov": null,
+      "confusion_matrix": [
+        [
+          1685,
+          71,
+          85,
+          59
+        ],
+        [
+          38,
+          1833,
+          13,
+          16
+        ],
+        [
+          87,
+          30,
+          1592,
+          191
+        ],
+        [
+          68,
+          29,
+          146,
+          1657
+        ]
+      ],
+      "fraction": 0.1
+    },
+    "tfidf_f0.5": {
+      "accuracy": 0.9152631578947369,
+      "precision_macro": 0.9152262591039677,
+      "recall_macro": 0.9152631578947368,
+      "f1_macro": 0.9151719868637407,
+      "selected_configuration": "baseline_f0.5",
+      "oov": null,
+      "confusion_matrix": [
+        [
+          1718,
+          55,
+          75,
+          52
+        ],
+        [
+          25,
+          1847,
+          16,
+          12
+        ],
+        [
+          63,
+          17,
+          1679,
+          141
+        ],
+        [
+          41,
+          18,
+          129,
+          1712
+        ]
+      ],
+      "fraction": 0.5
+    },
+    "tfidf_f1": {
+      "accuracy": 0.9234210526315789,
+      "precision_macro": 0.9234320141119666,
+      "recall_macro": 0.923421052631579,
+      "f1_macro": 0.9232489584674608,
+      "selected_configuration": "baseline_f1",
+      "oov": null,
+      "confusion_matrix": [
+        [
+          1732,
+          50,
+          66,
+          52
+        ],
+        [
+          13,
+          1866,
+          12,
+          9
+        ],
+        [
+          59,
+          17,
+          1675,
+          149
+        ],
+        [
+          38,
+          17,
+          100,
+          1745
+        ]
+      ],
+      "fraction": 1.0
+    },
+    "random_f0.01": {
+      "accuracy": 0.8310526315789474,
+      "precision_macro": 0.8318094500135167,
+      "recall_macro": 0.8310526315789474,
+      "f1_macro": 0.8310914075244825,
+      "selected_configuration": "random_trainable_f0.01_lr0.003",
+      "oov": {
+        "unknown_tokens": 1887,
+        "total_tokens": 298170,
+        "percent": 0.6328604487372975
+      },
+      "confusion_matrix": [
+        [
+          1616,
+          69,
+          128,
+          87
+        ],
+        [
+          113,
+          1702,
+          59,
+          26
+        ],
+        [
+          101,
+          32,
+          1544,
+          223
+        ],
+        [
+          126,
+          63,
+          257,
+          1454
+        ]
+      ],
+      "fraction": 0.01
+    },
+    "random_f0.1": {
+      "accuracy": 0.8923684210526316,
+      "precision_macro": 0.8919974349285452,
+      "recall_macro": 0.8923684210526315,
+      "f1_macro": 0.8920938205856112,
+      "selected_configuration": "random_trainable_f0.1_lr0.001",
+      "oov": {
+        "unknown_tokens": 1887,
+        "total_tokens": 298170,
+        "percent": 0.6328604487372975
+      },
+      "confusion_matrix": [
+        [
+          1702,
+          63,
+          81,
+          54
+        ],
+        [
+          46,
+          1829,
+          14,
+          11
+        ],
+        [
+          92,
+          19,
+          1592,
+          197
+        ],
+        [
+          69,
+          23,
+          149,
+          1659
+        ]
+      ],
+      "fraction": 0.1
+    },
+    "random_f0.5": {
+      "accuracy": 0.911578947368421,
+      "precision_macro": 0.9116566543507147,
+      "recall_macro": 0.911578947368421,
+      "f1_macro": 0.9115149526900839,
+      "selected_configuration": "random_trainable_f0.5_lr0.003",
+      "oov": {
+        "unknown_tokens": 1887,
+        "total_tokens": 298170,
+        "percent": 0.6328604487372975
+      },
+      "confusion_matrix": [
+        [
+          1710,
+          51,
+          78,
+          61
+        ],
+        [
+          24,
+          1848,
+          19,
+          9
+        ],
+        [
+          67,
+          9,
+          1656,
+          168
+        ],
+        [
+          47,
+          16,
+          123,
+          1714
+        ]
+      ],
+      "fraction": 0.5
+    },
+    "random_f1": {
+      "accuracy": 0.9218421052631579,
+      "precision_macro": 0.9217930591548104,
+      "recall_macro": 0.9218421052631579,
+      "f1_macro": 0.9217354627681354,
+      "selected_configuration": "random_trainable_f1_lr0.001",
+      "oov": {
+        "unknown_tokens": 1887,
+        "total_tokens": 298170,
+        "percent": 0.6328604487372975
+      },
+      "confusion_matrix": [
+        [
+          1730,
+          51,
+          75,
+          44
+        ],
+        [
+          17,
+          1866,
+          13,
+          4
+        ],
+        [
+          53,
+          12,
+          1708,
+          127
+        ],
+        [
+          54,
+          11,
+          133,
+          1702
+        ]
+      ],
+      "fraction": 1.0
+    },
+    "sgns_f0.01": {
+      "accuracy": 0.858421052631579,
+      "precision_macro": 0.8582325466802322,
+      "recall_macro": 0.858421052631579,
+      "f1_macro": 0.857937101424708,
+      "selected_configuration": "sgns_finetuned_f0.01_lr0.003",
+      "oov": {
+        "unknown_tokens": 10917,
+        "total_tokens": 298170,
+        "percent": 3.661334138243284
+      },
+      "confusion_matrix": [
+        [
+          1699,
+          60,
+          93,
+          48
+        ],
+        [
+          88,
+          1776,
+          15,
+          21
+        ],
+        [
+          134,
+          28,
+          1507,
+          231
+        ],
+        [
+          110,
+          45,
+          203,
+          1542
+        ]
+      ],
+      "fraction": 0.01
+    },
+    "sgns_f0.1": {
+      "accuracy": 0.895921052631579,
+      "precision_macro": 0.8957870084645461,
+      "recall_macro": 0.895921052631579,
+      "f1_macro": 0.895803012253006,
+      "selected_configuration": "sgns_finetuned_f0.1_lr0.001",
+      "oov": {
+        "unknown_tokens": 10917,
+        "total_tokens": 298170,
+        "percent": 3.661334138243284
+      },
+      "confusion_matrix": [
+        [
+          1696,
+          62,
+          93,
+          49
+        ],
+        [
+          35,
+          1839,
+          15,
+          11
+        ],
+        [
+          81,
+          14,
+          1620,
+          185
+        ],
+        [
+          46,
+          22,
+          178,
+          1654
+        ]
+      ],
+      "fraction": 0.1
+    },
+    "sgns_f0.5": {
+      "accuracy": 0.9085526315789474,
+      "precision_macro": 0.90900142604326,
+      "recall_macro": 0.9085526315789474,
+      "f1_macro": 0.908545583589837,
+      "selected_configuration": "sgns_finetuned_f0.5_lr0.003",
+      "oov": {
+        "unknown_tokens": 10917,
+        "total_tokens": 298170,
+        "percent": 3.661334138243284
+      },
+      "confusion_matrix": [
+        [
+          1683,
+          60,
+          97,
+          60
+        ],
+        [
+          20,
+          1853,
+          17,
+          10
+        ],
+        [
+          56,
+          8,
+          1662,
+          174
+        ],
+        [
+          40,
+          13,
+          140,
+          1707
+        ]
+      ],
+      "fraction": 0.5
+    },
+    "sgns_f1": {
+      "accuracy": 0.9193421052631578,
+      "precision_macro": 0.9200746322077312,
+      "recall_macro": 0.9193421052631578,
+      "f1_macro": 0.919306029774113,
+      "selected_configuration": "sgns_finetuned_f1_lr0.003",
+      "oov": {
+        "unknown_tokens": 10917,
+        "total_tokens": 298170,
+        "percent": 3.661334138243284
+      },
+      "confusion_matrix": [
+        [
+          1688,
+          59,
+          97,
+          56
+        ],
+        [
+          8,
+          1874,
+          14,
+          4
+        ],
+        [
+          36,
+          13,
+          1704,
+          147
+        ],
+        [
+          35,
+          10,
+          134,
+          1721
+        ]
+      ],
+      "fraction": 1.0
+    },
+    "gensim_f0.01": {
+      "accuracy": 0.8609210526315789,
+      "precision_macro": 0.8614187067035923,
+      "recall_macro": 0.860921052631579,
+      "f1_macro": 0.8603508642748554,
+      "selected_configuration": "gensim_finetuned_f0.01_lr0.003",
+      "oov": {
+        "unknown_tokens": 10917,
+        "total_tokens": 298170,
+        "percent": 3.661334138243284
+      },
+      "confusion_matrix": [
+        [
+          1676,
+          66,
+          122,
+          36
+        ],
+        [
+          68,
+          1798,
+          19,
+          15
+        ],
+        [
+          98,
+          34,
+          1593,
+          175
+        ],
+        [
+          114,
+          54,
+          256,
+          1476
+        ]
+      ],
+      "fraction": 0.01
+    },
+    "gensim_f0.1": {
+      "accuracy": 0.8957894736842106,
+      "precision_macro": 0.8958165484656655,
+      "recall_macro": 0.8957894736842105,
+      "f1_macro": 0.8957365903129006,
+      "selected_configuration": "gensim_finetuned_f0.1_lr0.001",
+      "oov": {
+        "unknown_tokens": 10917,
+        "total_tokens": 298170,
+        "percent": 3.661334138243284
+      },
+      "confusion_matrix": [
+        [
+          1696,
+          61,
+          95,
+          48
+        ],
+        [
+          35,
+          1838,
+          16,
+          11
+        ],
+        [
+          75,
+          15,
+          1627,
+          183
+        ],
+        [
+          46,
+          19,
+          188,
+          1647
+        ]
+      ],
+      "fraction": 0.1
+    },
+    "gensim_f0.5": {
+      "accuracy": 0.9088157894736842,
+      "precision_macro": 0.9093260132462206,
+      "recall_macro": 0.9088157894736841,
+      "f1_macro": 0.9088004375022743,
+      "selected_configuration": "gensim_finetuned_f0.5_lr0.003",
+      "oov": {
+        "unknown_tokens": 10917,
+        "total_tokens": 298170,
+        "percent": 3.661334138243284
+      },
+      "confusion_matrix": [
+        [
+          1679,
+          60,
+          98,
+          63
+        ],
+        [
+          20,
+          1854,
+          18,
+          8
+        ],
+        [
+          53,
+          11,
+          1666,
+          170
+        ],
+        [
+          38,
+          14,
+          140,
+          1708
+        ]
+      ],
+      "fraction": 0.5
+    },
+    "gensim_f1": {
+      "accuracy": 0.9177631578947368,
+      "precision_macro": 0.9186223138934781,
+      "recall_macro": 0.9177631578947368,
+      "f1_macro": 0.9177617447846891,
+      "selected_configuration": "gensim_finetuned_f1_lr0.003",
+      "oov": {
+        "unknown_tokens": 10917,
+        "total_tokens": 298170,
+        "percent": 3.661334138243284
+      },
+      "confusion_matrix": [
+        [
+          1679,
+          60,
+          102,
+          59
+        ],
+        [
+          12,
+          1867,
+          15,
+          6
+        ],
+        [
+          38,
+          9,
+          1699,
+          154
+        ],
+        [
+          32,
+          9,
+          129,
+          1730
+        ]
+      ],
+      "fraction": 1.0
+    },
+    "glove_f0.01": {
+      "accuracy": 0.8636842105263158,
+      "precision_macro": 0.8637796172439892,
+      "recall_macro": 0.8636842105263158,
+      "f1_macro": 0.8636179926326361,
+      "selected_configuration": "glove_finetuned_f0.01_lr0.003",
+      "oov": {
+        "unknown_tokens": 3114,
+        "total_tokens": 298170,
+        "percent": 1.044370661032297
+      },
+      "confusion_matrix": [
+        [
+          1674,
+          58,
+          105,
+          63
+        ],
+        [
+          83,
+          1774,
+          13,
+          30
+        ],
+        [
+          101,
+          21,
+          1531,
+          247
+        ],
+        [
+          96,
+          31,
+          188,
+          1585
+        ]
+      ],
+      "fraction": 0.01
+    },
+    "glove_f0.1": {
+      "accuracy": 0.8976315789473684,
+      "precision_macro": 0.8980559778740433,
+      "recall_macro": 0.8976315789473684,
+      "f1_macro": 0.8975794046770448,
+      "selected_configuration": "glove_finetuned_f0.1_lr0.001",
+      "oov": {
+        "unknown_tokens": 3114,
+        "total_tokens": 298170,
+        "percent": 1.044370661032297
+      },
+      "confusion_matrix": [
+        [
+          1677,
+          61,
+          98,
+          64
+        ],
+        [
+          30,
+          1838,
+          18,
+          14
+        ],
+        [
+          67,
+          16,
+          1608,
+          209
+        ],
+        [
+          38,
+          17,
+          146,
+          1699
+        ]
+      ],
+      "fraction": 0.1
+    },
+    "glove_f0.5": {
+      "accuracy": 0.910921052631579,
+      "precision_macro": 0.9112411282586245,
+      "recall_macro": 0.910921052631579,
+      "f1_macro": 0.9109804705228628,
+      "selected_configuration": "glove_finetuned_f0.5_lr0.003",
+      "oov": {
+        "unknown_tokens": 3114,
+        "total_tokens": 298170,
+        "percent": 1.044370661032297
+      },
+      "confusion_matrix": [
+        [
+          1705,
+          52,
+          95,
+          48
+        ],
+        [
+          32,
+          1842,
+          17,
+          9
+        ],
+        [
+          55,
+          10,
+          1690,
+          145
+        ],
+        [
+          52,
+          9,
+          153,
+          1686
+        ]
+      ],
+      "fraction": 0.5
+    },
+    "glove_f1": {
+      "accuracy": 0.9213157894736842,
+      "precision_macro": 0.9213791522718097,
+      "recall_macro": 0.9213157894736842,
+      "f1_macro": 0.9212346324554199,
+      "selected_configuration": "glove_finetuned_f1_lr0.001",
+      "oov": {
+        "unknown_tokens": 3114,
+        "total_tokens": 298170,
+        "percent": 1.044370661032297
+      },
+      "confusion_matrix": [
+        [
+          1724,
+          49,
+          78,
+          49
+        ],
+        [
+          12,
+          1867,
+          13,
+          8
+        ],
+        [
+          50,
+          13,
+          1690,
+          147
+        ],
+        [
+          46,
+          11,
+          122,
+          1721
+        ]
+      ],
+      "fraction": 1.0
+    }
+  },
+  "simlex": {
+    "sgns": {
+      "spearman": 0.3300287435611985,
+      "evaluated": 993,
+      "total": 999,
+      "coverage": 0.993993993993994
+    },
+    "gensim": {
+      "spearman": 0.3369726248359478,
+      "evaluated": 993,
+      "total": 999,
+      "coverage": 0.993993993993994
+    },
+    "glove": {
+      "spearman": 0.29754985300614595,
+      "evaluated": 999,
+      "total": 999,
+      "coverage": 1.0
+    }
+  }
+}
